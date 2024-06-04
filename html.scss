@@ -1,0 +1,115 @@
+// Variabelen
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+
+// Namespace
+$font-size: 16px;
+
+// Operations
+$padding: 10px;
+$margin: $padding * 2;
+
+// Media Queries
+$mobile-width: 768px;
+$tablet-width: 1024px;
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+// Geneste elementen
+header {
+    background-color: $primary-color;
+    color: white;
+    padding: $padding;
+
+    nav {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            
+            li {
+                display: inline-block;
+                margin-right: $margin;
+                
+                &:last-child {
+                    margin-right: 0;
+                }
+                
+                a {
+                    color: white;
+                    text-decoration: none;
+                    
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// @media
+@media screen and (max-width: $mobile-width) {
+    header {
+        background-color: $secondary-color;
+    }
+}
+
+@media screen and (max-width: $tablet-width) {
+    // Styles voor tablet
+}
+
+// @extend
+.message {
+    border: 1px solid #ccc;
+    padding: $padding;
+}
+
+.success-message {
+    @extend .message;
+    color: green;
+}
+
+.error-message {
+    @extend .message;
+    color: red;
+}
+
+// @if, @else if, @else
+$show-warning: true;
+
+.warning {
+    @if $show-warning {
+        display: block;
+        color: orange;
+    } @else {
+        display: none;
+    }
+}
+
+// @for
+@for $i from 1 through 5 {
+    .item-#{$i} {
+        width: 100px * $i;
+    }
+}
+
+// @each
+$colors: red, green, blue;
+
+@each $color in $colors {
+    .color-#{$color} {
+        color: $color;
+    }
+}
+
+// @while
+$i: 1;
+
+@while $i < 5 {
+    .while-#{$i} {
+        width: 50px * $i;
+    }
+    $i: $i + 1;
+}
