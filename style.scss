@@ -1,0 +1,154 @@
+// Variables
+$primary-color: #333;
+$secondary-color: #444;
+$text-color: #fff;
+$bg-color: #f4f4f4;
+$font-stack: 'Arial', sans-serif;
+
+// Mixin for flexbox center alignment
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// General styles
+body {
+  font-family: $font-stack;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: $bg-color;
+}
+
+// Header styles
+header {
+  background: $primary-color;
+  color: $text-color;
+  padding: 1rem;
+  text-align: center;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+// Section styles
+section {
+  padding: 1rem;
+
+  h2 {
+    margin-top: 0;
+  }
+
+  &#about {
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+    }
+  }
+
+  &#contact {
+    a {
+      color: $primary-color;
+    }
+
+    form {
+      display: grid;
+      gap: 0.5rem;
+
+      label {
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      textarea {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid $primary-color;
+        border-radius: 0.25rem;
+      }
+
+      input[type="submit"] {
+        background: $primary-color;
+        color: $text-color;
+        border: none;
+        padding: 0.75rem;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &#skills,
+  &#education,
+  &#experience,
+  &#technologies,
+  &#links {
+    ul {
+      list-style: none;
+      padding: 0;
+
+      li {
+        background: $primary-color;
+        color: $text-color;
+        margin-bottom: 0.5rem;
+        padding: 0.5rem;
+        border-radius: 0.25rem;
+      }
+    }
+  }
+
+  &#projects {
+    .project {
+      background: $primary-color;
+      color: $text-color;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 0.25rem;
+
+      h3 {
+        margin-top: 0;
+      }
+
+      a {
+        color: lighten($primary-color, 20%);
+        text-decoration: none;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+// Footer styles
+footer {
+  background: $secondary-color;
+  color: $text-color;
+  padding: 1rem;
+  text-align: center;
+}
+
+// Media queries
+@media (max-width: 768px) {
+  body {
+    padding: 0.5rem;
+  }
+
+  section {
+    padding: 0.5rem;
+  }
+
+  form {
+    display: block;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+  }
+}
