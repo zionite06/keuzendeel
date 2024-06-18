@@ -1,0 +1,123 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front-End Structure</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+            grid-template-columns: 100%;
+            min-height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        header, footer {
+            background: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav {
+            background: #444;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            padding: 1rem;
+        }
+
+        article {
+            background: #f4f4f4;
+            margin: 1rem 0;
+            padding: 1rem;
+            border: 1px solid #ccc;
+        }
+
+        @media (min-width: 768px) {
+            main {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            
+            article {
+                flex: 0 0 48%;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            nav, header, footer {
+                grid-column: span 2;
+            }
+
+            main {
+                grid-template-columns: 1fr 3fr;
+                display: grid;
+                gap: 1rem;
+            }
+
+            article {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+    <main>
+        <article>
+            <header>
+                <h2>Article 1</h2>
+            </header>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            </section>
+        </article>
+        <article>
+            <header>
+                <h2>Article 2</h2>
+            </header>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            </section>
+        </article>
+        <article>
+            <header>
+                <h2>Article 3</h2>
+            </header>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            </section>
+        </article>
+        <article>
+            <header>
+                <h2>Article 4</h2>
+            </header>
+            <section>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>
+            </section>
+        </article>
+    </main>
+    <footer>
+        <p>&copy; 2024 My Website</p>
+    </footer>
+</body>
+</html>
